@@ -1,8 +1,35 @@
-<button class="btn btn-danger" [disabled]="!allowServerAdd" > Add Servers</button>
-<div>{{allowServerAdd}}</div>
+
+<div class="cointaner">
+    <label>Event Binding</label>
+    <input type="text" class="form-control" (input)="onChangeServerName($event)" >
+    <label>Two way Binding</label>
+    <input type="text" class="form-control" [(ngModel)]="serverName" />
+    <p>{{serverName}}</p>
+</div>
+
+<button 
+    class="btn btn-danger"  
+    [disabled]="!allowServerAdd" 
+    (click)="onChangeServerCreation()"
+    > Add Servers
+</button>
+<div>{{serverCreationStatus}}</div>
+
 <npst-server></npst-server>
 <npst-server></npst-server>
 
+
+<div>
+    <h2>Assignment Two</h2>
+    <label>UserName</label>
+    <input type="text" name="usename" [(ngModel)]="userName"/>
+    <p>UserName -: {{userName}}</p>
+    <button 
+        class="btn btn-danger" 
+        (click)="userName = ''" 
+        [disabled]="userName === ''"
+    >Reset </button>
+</div>
 <!-- <div npst-server></div>
 <div npst-server></div> -->
 
