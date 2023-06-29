@@ -1,0 +1,6 @@
+<button class="btn-danger" [className]="{btn:true}" (click)="onDisplay()">Display Details</button>
+<p *ngIf="showData">Password is ******</p>
+
+<div [ngStyle]="{marginTop: '25px'}">
+    <npst-assignment-logs [serverLogs]="serverLogs"></npst-assignment-logs>
+</div>

@@ -13,7 +13,11 @@ export class ServersComponent {
 
   serverName = 'Test Server';
 
-  userName:string = ''
+  userName:string = '';
+
+  serverStatus: boolean = false
+
+  servers: string[] = ['sso','api']
 
   
 
@@ -33,6 +37,8 @@ export class ServersComponent {
   }
 
   onChangeServerCreation(){
-    this.serverCreationStatus = 'Server Created and Server Name is ' + this.serverName
+    this.serverCreationStatus = 'Server Created and Server Name is ' + this.serverName;
+    this.servers.push(this.serverName)
+    this.serverStatus = true
   }
 }

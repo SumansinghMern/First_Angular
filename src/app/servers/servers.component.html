@@ -13,10 +13,14 @@
     (click)="onChangeServerCreation()"
     > Add Servers
 </button>
-<div>{{serverCreationStatus}}</div>
 
-<npst-server></npst-server>
-<npst-server></npst-server>
+<!-- To use if else -->
+<div *ngIf="serverStatus else noServer">{{serverCreationStatus}}</div>
+<ng-template #noServer>
+    <p>{{serverCreationStatus}}</p>
+</ng-template>
+
+<npst-server *ngFor="let server of servers"></npst-server>
 
 
 <div>
